@@ -11,6 +11,7 @@ import { connectDB } from "./lib/db.js";
 import { ENV } from "./lib/env.js";
 
 const app = express();
+app.set("trust proxy", 1);
 const __dirname = path.resolve();
 
 const PORT = ENV.PORT || 3000;
@@ -46,3 +47,4 @@ app.listen(3000, () => {
     connectDB();
 
 });
+
