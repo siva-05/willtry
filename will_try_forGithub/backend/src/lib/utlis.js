@@ -9,7 +9,7 @@ export const generateToken = (userId,res) => {
     res.cookie("jwt", token, {
         maxAge: 7*24*60*60*1000, //MS
         httpOnly: true, //prevent XSS attacks
-        sameSite: "strict", // CSRT attacks
+        sameSite: "none", // CSRT attacks
         secure: ENV.NODE_ENV === "development" ? false : true,
     });
 
@@ -17,4 +17,5 @@ export const generateToken = (userId,res) => {
 };
 
 // http://localhost
+
 // https://asdjfa;.com
